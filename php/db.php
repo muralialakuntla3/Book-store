@@ -1,7 +1,7 @@
 <?php
 
 function Createdb(){
-    $servername = "backenddb";
+    $servername = "localhost";
     $username = "root";
     $password = "root123";
     $dbname = "bookstore";
