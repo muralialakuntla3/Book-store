@@ -1,3 +1,5 @@
+<?php
+echo "db.php is included"; 
 function Createdb(){
     $servername = getenv('DB_SERVERNAME') ?: "localhost";
     $username = getenv('DB_USERNAME') ?: "root";
