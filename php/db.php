@@ -1,10 +1,8 @@
-<?php
-
 function Createdb(){
-    $servername = "172.17.0.2";
-    $username = "root";
-    $password = "Qwerty@123";
-    $dbname = "bookstore";
+    $servername = getenv('DB_SERVERNAME') ?: "localhost";
+    $username = getenv('DB_USERNAME') ?: "root";
+    $password = getenv('DB_PASSWORD') ?: "root123";
+    $dbname = getenv('DB_NAME') ?: "bookstore";
 
     // create connection
     $con = mysqli_connect($servername, $username, $password);
