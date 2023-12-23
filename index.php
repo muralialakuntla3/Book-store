@@ -1,5 +1,5 @@
 <?php
-
+require_once("php/db.php");
 require_once ("php/component.php");
 require_once ("php/operation.php");
 ?>
