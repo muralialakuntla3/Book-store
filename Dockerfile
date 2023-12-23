@@ -2,10 +2,13 @@ FROM nginx
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 # Copy PHP files to NGINX's HTML directory
+RUN rm /usr/share/nginx/html/*
+
+# Copy PHP files to NGINX's HTML directory
 COPY . /usr/share/nginx/html
 
 # (Optional) Install necessary PHP extensions if required
-RUN docker-php-ext-install mysqli
+# RUN docker-php-ext-install mysqli
 
 # Expose port 80
 EXPOSE 80
