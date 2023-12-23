@@ -1,20 +1,20 @@
-FROM nginx
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+# Use the official PHP with Apache image as the base image
+FROM php:7.4-apache
 
-# Copy PHP files to NGINX's HTML directory
-RUN rm /usr/share/nginx/html/*
+# Create a directory named 'app' within the container
+RUN mkdir /app
 
-# Copy PHP files to NGINX's HTML directory
-COPY . /usr/share/nginx/html
+# Set the working directory to the 'app' directory
+WORKDIR /app
+
+# Copy the PHP application files from the host to the 'app' directory in the container
+COPY . .
+
+# Copy the contents from the 'app' directory to the Apache document root (/var/www/html)
+RUN cp -R ./* /var/www/html/
 
 # (Optional) Install necessary PHP extensions if required
-# RUN docker-php-ext-install mysqli
+RUN docker-php-ext-install mysqli
 
-# Expose port 80
+# Expose port 80 (default port for Apache)
 EXPOSE 80
-
-# Command to start NGINX (daemon off keeps NGINX running in the foreground)
-CMD ["nginx", "-g", "daemon off;"]
-
-
-
