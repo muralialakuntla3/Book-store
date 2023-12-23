@@ -1,9 +1,9 @@
 <?php
 
 function Createdb(){
-    $servername = "localhost";
+    $servername = "172.17.0.2";
     $username = "root";
-    $password = "root123";
+    $password = "Qwerty@123";
     $dbname = "bookstore";
 
     // create connection
