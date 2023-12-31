@@ -14,7 +14,7 @@ pipeline {
           }
         stage('Docker Login & Push') {
             steps {
-                sh 'echo $dockerhub_PSW | docker login -u $dockerhub_USR --password-stdin'
+		sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
                 sh 'docker push muralialakuntla3/book-store'
               }
           }
