@@ -49,7 +49,7 @@
 - goto jenkins -> manage jenkins -> credentilas -> add docker hub details
 ### Slack configuration
 - goto your slack workspace and create channel and configure with JenkinsCI
-- install slack plugin in jenkins
+- install **slack plugin & Pipeline Utility Steps** plugins in jenkins
 - restart jenkins after plugin install
 - goto manage jenkins -> system 
 - Global Slack Messages -> this settings for after build status you need to include slack in Jenkinsfile
