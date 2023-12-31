@@ -23,11 +23,18 @@ pipeline {
                 sh 'docker rmi -f muralialakuntla3/book-store'
               }
           }
-	stage('Docker Network') {
-            steps {              
-		sh 'docker network create -d bridge booknetwork'
-              }
-          }
+        stage('Docker Network') {
+            steps {
+                script {
+                    def existingNetwork = sh(script: "docker network ls --filter name=booknetwork --format '{{.Name}}'", returnStdout: true).trim()
+                    if (!existingNetwork.contains('booknetwork')) {
+                        sh 'docker network create -d bridge booknetwork'
+                    } else {
+                        echo 'booknetwork already exists.'
+                    }
+                }
+            }
+        }
        stage('Creating Database') {
             steps {
                 script {
@@ -56,12 +63,13 @@ pipeline {
 	        slackSend(
 	            channel: 'book-jenkins',
 	            color: '439FE0',
-	            message: "Your book store application deployed successfully!",
+	            message: "Job '${env.JOB_NAME}' build #${env.BUILD_NUMBER} - Your book store application deployed successfully!",
 	            teamDomain: 'konalms',
 	            tokenCredentialId: 'slack',
 	            username: 'jenkins-murali'
 	        )
 	    }
 	}
+
     }
 }
