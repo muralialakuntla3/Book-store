@@ -35,11 +35,26 @@
   /etc/apt/sources.list.d/jenkins.list > /dev/null
 - sudo apt-get update
 - sudo apt-get install jenkins -y
+- sudo visudo
+- add this: **jenkins ALL=(ALL:ALL) ALL**
+- restart jenkins: sudo systemctl restart jenkins
 ### install docker for building images
 - curl -fsSL https://get.docker.com -o install-docker.sh
 - sudo sh install-docker.sh
+- sudo usermod -aG docker ubuntu
+- newgrp docker
+### docker hub credentials updating
 - open jenkins in browser and install suggested plugins
-- configure slack and docker hub details
+- goto docker hub and generate token
+- goto jenkins -> manage jenkins -> credentilas -> add docker hub details
+### Slack configuration
+- goto your slack workspace and create channel and configure with JenkinsCI
+- install slack plugin in jenkins
+- restart jenkins after plugin install
+- goto manage jenkins -> system 
+- Global Slack Messages -> this settings for after build status you need to include slack in Jenkinsfile
+- Slack -> this is for slack intigration in Jenkinsfile -> workspace , token -> test connection
+### create Pipeline 
 - configure node details if any ( install java & docker)
 - create pipeline job for application
 - run pipeline
