@@ -2,6 +2,9 @@
 
 ## Deployment through Jenkins Pipeline
 - launch server
+- t2.medium
+- ports: 22, 80, 8080, 3306
+- ebs: 15 GB
 ### install java and jenkins
 - sudo apt install openjdk-17* -y
 - sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
