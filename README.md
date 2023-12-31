@@ -26,8 +26,18 @@
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Deployment through Jenkins Pipeline
 - launch server
-- install java and jenkins
-- install docker for building images
+### install java and jenkins
+- sudo apt install openjdk-17* -y
+- sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
+  https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
+- echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+  https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+  /etc/apt/sources.list.d/jenkins.list > /dev/null
+- sudo apt-get update
+- sudo apt-get install jenkins -y
+### install docker for building images
+- curl -fsSL https://get.docker.com -o install-docker.sh
+- sudo sh install-docker.sh
 - open jenkins in browser and install suggested plugins
 - configure slack and docker hub details
 - configure node details if any ( install java & docker)
