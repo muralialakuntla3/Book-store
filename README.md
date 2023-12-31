@@ -5,7 +5,7 @@
 - t2.medium
 - os: ubuntu 20.04
 - ports: 22, 80, 8080, 3306
-- ebs: 15 GB
+- Root Volume: 15 GB
 ### install java and jenkins
 - sudo apt install openjdk-17* -y
 - sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
