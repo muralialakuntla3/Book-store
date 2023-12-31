@@ -24,8 +24,10 @@
 - sudo usermod -aG docker ubuntu
 - sudo usermod -aG docker jenkins
 - newgrp docker
-### docker hub credentials updating
+### Jenkins Configuration 
 - open jenkins in browser and install suggested plugins
+- configure node details if any ( install java & docker)
+### docker hub credentials updating
 - goto docker hub and generate token
 - goto jenkins -> manage jenkins -> credentilas -> add docker hub details
 ### Slack configuration
@@ -36,7 +38,6 @@
 - Global Slack Messages -> this settings for after build status you need to include slack in Jenkinsfile
 - Slack -> this is for slack intigration in Jenkinsfile -> workspace , token -> test connection
 ### Create Pipeline job for Application
-- configure node details if any ( install java & docker)
 - create pipeline job for application
 - configure github details
 - select branch and specify Jenkinsfile path
