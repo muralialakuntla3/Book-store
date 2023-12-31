@@ -54,7 +54,7 @@ pipeline {
 	stage('Slack Notification') {
 	    steps {
 	        slackSend(
-	            channel: 'jenkins-slacks',
+	            channel: 'book-jenkins',
 	            color: '439FE0',
 	            message: "Your book store application deployed successfully!",
 	            teamDomain: 'konalms',
