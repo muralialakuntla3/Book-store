@@ -35,7 +35,7 @@ pipeline {
                     if (existingMysqlContainer) {
                         echo 'MySQL container already exists.'
                     } else {
-                        sh 'docker run -dt --name mysql --network booknetwork -p 3306:3306 -e MYSQL_ROOT_PASSWORD=Qwerty@123 -v mysql_data:/var/lib/mysql mysql'
+                        sh 'docker run -dt --name mysql --network booknetwork -p 3306:3306 -e MYSQL_ROOT_PASSWORD=Qwerty@123 mysql'
                     }
                 }
             }
@@ -47,7 +47,7 @@ pipeline {
                     if (existingBookContainer) {
                         sh "docker rm -f ${existingBookContainer}"
                     }
-                    sh 'docker run -dt --name book --network booknetwork -p 80:80 -e DB_SERVERNAME=mysql -e DB_USERNAME=root -e DB_PASSWORD=Qwerty@123 -e DB_NAME=mkbook ${dockerImage}'
+                    sh 'docker run -dt --name book --network booknetwork -p 80:80 -e DB_SERVERNAME=mysql -e DB_USERNAME=root -e DB_PASSWORD=Qwerty@123 -e DB_NAME=mkbook muralialakuntla3/book-store'
                 }
             }
         }
