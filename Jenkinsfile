@@ -9,7 +9,7 @@ pipeline {
     stages{
         stage('Docker Build') {
             steps {
-                sh 'sudo docker build -t muralialakuntla3/book-store .'
+                sh 'docker build -t muralialakuntla3/book-store .'
               }
           }
         stage('Docker Login & Push') {
