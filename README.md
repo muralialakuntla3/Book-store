@@ -42,6 +42,7 @@
 - curl -fsSL https://get.docker.com -o install-docker.sh
 - sudo sh install-docker.sh
 - sudo usermod -aG docker ubuntu
+- sudo usermod -aG docker jenkins
 - newgrp docker
 ### docker hub credentials updating
 - open jenkins in browser and install suggested plugins
