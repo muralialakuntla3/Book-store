@@ -23,3 +23,14 @@
 - cd Book-store
 - docker build -t book .
 - docker run -dt --name book --network book -p 80:80 -e DB_SERVERNAME=mysql -e DB_USERNAME=root -e DB_PASSWORD=Qwerty@123 -e DB_NAME=mkbook book
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+## Deployment through Jenkins Pipeline
+- launch server
+- install java and jenkins
+- install docker for building images
+- open jenkins in browser and install suggested plugins
+- configure slack and docker hub details
+- configure node details if any ( install java & docker)
+- create pipeline job for application
+- run pipeline
+- check application through browser whether it is running or not 
