@@ -3,6 +3,7 @@
 ## Deployment through Jenkins Pipeline
 - launch server
 - t2.medium
+- os: ubuntu 20.04
 - ports: 22, 80, 8080, 3306
 - ebs: 15 GB
 ### install java and jenkins
