@@ -31,7 +31,7 @@
 - goto manage jenkins -> system 
 - Global Slack Messages -> this settings for after build status you need to include slack in Jenkinsfile
 - Slack -> this is for slack intigration in Jenkinsfile -> workspace , token -> test connection
-### Create Pipeline 
+### Create Pipeline job for Application
 - configure node details if any ( install java & docker)
 - create pipeline job for application
 - configure github details
