@@ -66,7 +66,7 @@ pipeline {
 	            message: "Job '${env.JOB_NAME}' build #${env.BUILD_NUMBER} - Your book store application deployed successfully!",
 	            teamDomain: 'konalms',
 	            tokenCredentialId: 'slack',
-	            username: 'jenkins-murali'
+	            username: 'jenkins'
 	        )
 	    }
 	}
